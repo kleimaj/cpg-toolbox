@@ -1,0 +1,35 @@
+// filters.scss
+
+ul.filters {
+	width: 100%;
+	background-color: rgba($lt-blue,.15);
+	min-height: 2em;
+	margin: 4vh 0;
+	padding: .5em 0;
+	font-size: .8em;
+	
+	li {
+		display: inline-block;
+		vertical-align: middle;
+		
+		&:first-of-type {
+			pointer-events: none;
+			padding: .5em 1em;
+			color: $lt-blue;
+		}
+		
+		a {
+			display: block;
+			padding: .5em 1em;
+			color: $white;
+			text-align: center;
+			@include border-radius($border-radius);
+			
+			&:hover,
+			&.active {
+				@include radial-gradient(rgb(185,206,214),$lt-blue-2);
+				color: $md-blue;
+			}
+		}
+	}
+}

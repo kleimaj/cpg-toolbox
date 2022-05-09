@@ -1,0 +1,30 @@
+/* MIX-INS */
+a.view-master { display: block; line-height: 2em; margin: 1em 0; color: white; background-color: #0590c5; text-align: center; -webkit-border-radius: 2em; -moz-border-radius: 2em; -ms-border-radius: 2em; border-radius: 2em; }
+a.view-master i { margin-right: .25em; color:white; font-size: 1em; }
+
+#profile #all-events-modal { display: none; position: fixed; top: 50%; left: 50%; z-index: 9998; background-color: white; -ms-transform: translate(-50%, -50%); -webkit-transform: translate(-50%, -50%); transform: translate(-50%, -50%); width: 50%; border: 1px solid #014a6c; box-shadow: 0 0 1em rgba(0, 0, 0, 0.5); padding: 2em; }
+#profile #all-events-modal.visible { display: block; }
+#profile #all-events-modal a.close-btn { display: block; position: absolute; top: 1em; right: 1em; color: #014a6c; font-size: .8em; }
+#profile #all-events-modal a.close-btn i { margin-right: .25em; }
+#profile #all-events-modal > img { height: 3em; margin: 0 auto .5em auto; display: block; }
+#profile #all-events-modal h1 { text-align: center; font-size: 1rem; }
+#profile #all-events-modal li { margin: 5px; cursor: pointer; }
+#profile #all-events-modal ul { margin: 20px; }
+/* #profile #all-events-modal ul.event-type { display: block; border-top: 1px solid rgba(1, 74, 108, 0.5); border-bottom: 1px solid rgba(1, 74, 108, 0.5); font-size: 0; margin-bottom: 1rem; }
+#profile #all-events-modal ul.event-type li { font-size: .8rem; display: inline-block; vertical-align: top; width: calc(100% / 3); padding: 0 1em; }
+#profile #all-events-modal ul.event-type li label { display: block; color: #014a6c; text-align: center; padding: .5em 0; }
+#profile #all-events-modal ul.event-type li label:hover, #profile #all-events-modal ul.event-type li input:checked + label{ background-color: rgba(1, 74, 108, 0.5); color: white; }
+#profile #all-events-modal ul.event-type li input[type="radio"] { display: none; visibility: hidden; }
+#profile #all-events-modal ul.field-set { width: 100%; font-size: 0; position: relative; padding: 1rem 0; }
+#profile #all-events-modal ul.field-set:before { content: ''; position: absolute; height: 100%; width: 1px; background-color: #c472b4; top: 0; left: 30%; }
+#profile #all-events-modal ul.field-set li { display: inline-block; vertical-align: top; font-size: 1rem; line-height: 1.15em; margin-bottom: 1em; margin-bottom: 1em; }
+#profile #all-events-modal ul.field-set li:nth-of-type(odd) { width: 30%; text-align: right; padding-right: 2%; color: #0590c5; }
+#profile #all-events-modal ul.field-set li:nth-of-type(even) { width: 70%; text-align: left; padding-left: 2%; }
+#profile #all-events-modal button { width:175px; margin-left: calc(50% - 87.5px); }
+#profile #all-events-modal button > i { margin-right: 5px; }
+#profile #all-events-modal button > i { margin-right: 5px; } */
+#profile #all-events-modal p { text-align: center; color: #85a5b6; font-family: inherit; margin-bottom: 20px; }
+#profile hr { border: 0; border-top: 1px solid #88a8b9; margin-top: 10px; margin-bottom: 10px; }
+
+table.SimpleCalendar tbody td div.event > div { justify-content: center !important; margin-bottom: 5px; border-bottom: none;}
+i.fa-calendar-alt, i.fa-map-marker-alt { font-size: 26px; color: #068ec6; margin: 0 .6em 0 0; }

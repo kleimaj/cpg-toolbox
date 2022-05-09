@@ -1,0 +1,1 @@
+{"LogID":48,"auth_user":true,"logged_in":true,"user_verified":"20220425142916","LAST_ACTIVITY":1650911355,"UserFullName":"Eric Ralls","samaccountname":"EricR","userid":741,"net":"ericr","mail":"EricR@communicationpartners.com"}

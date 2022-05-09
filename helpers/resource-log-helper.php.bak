@@ -1,0 +1,82 @@
+<?php 
+require_once '../../resources/app_config.php';
+
+use resources\library\AppUtility;
+use resources\library\DBUtility;
+use resources\library\Account;
+use resources\library\Resources;
+
+$appUtil = new AppUtility();
+
+if(isset($_SESSION["UserID"]))
+	$UInfo = Account::CreateFromID($_SESSION['UserID']);
+
+if(!$UInfo){
+	http_response_code(404);
+    echo json_encode(array("msg"=>"User not found."));
+    exit();
+}
+
+if(!empty($_POST)) {
+    if(isset($_POST['resourceID']) && isset($_POST['logAction'])){
+        //Log start/view, time update,complete
+        
+        if ($_POST['logAction'] == 'LogView') {
+            $LogResult = Resources::UpdateLog($UInfo->getID(),$_POST['resourceID'],'View Resource',$_POST['timeIndex'],$_POST['isComplete']);
+
+            if ($LogResult->Status == "Pass") {
+                $name = $UInfo->FirstName. " " .$UInfo->LastName;
+                $applogger->addInfo("{$name} ({$_SESSION["UserID"]}) Updated Resource Log");
+                header('Content-type: application/json');
+                echo json_encode(array("ResourceID" => $_POST['resourceID'], "Activity" => $_POST['logAction'], "TimeIndex" => $_POST['timeIndex'], "IsComplete"=>$_POST['isComplete']));
+            } else {
+                http_response_code(500);
+                echo json_encode(array("msg" => $LogResult->Message));
+                exit();
+            }
+
+        } else if ($_POST['logAction'] == 'GetProgress') {
+            $LogResult = Resources::GetProgress($UInfo->getID(),$_POST['resourceID']);
+            
+            header('Content-type: application/json');
+            echo json_encode(array("ResourceID" => $LogResult["iResourceID"], "TimeIndex" => $LogResult['iTimeIndex'], "IsComplete"=>$LogResult['bComplete']));
+        
+        } else if ($_POST['logAction'] == 'GetTrainingProgress') {
+            $LogResult = Resources::GetTrainingProgress($UInfo->getID(),$_POST['resourceID']);
+            
+            header('Content-type: application/json');
+            echo json_encode(array("ResourceID" => $LogResult["iResourceID"], "IsComplete"=>$LogResult['bComplete']));
+        
+        } else if ($_POST['logAction'] == 'SignTraining') {
+            $LogResult = Resources::UpdateTrainingLog($UInfo->getID(),$_POST['resourceID'],$_POST['isSigned']);
+
+            
+            if ($LogResult->Status == "Pass") {
+                $name = $UInfo->FirstName. " " .$UInfo->LastName;
+                $resourceName = "Annual Compliance Training Video";//$_POST['resourceName']
+                //Send email
+                Resources::SendConfirmaion($UInfo->Email,$resourceName,$UInfo->FirstName,$UInfo->LastName);  
+
+                $applogger->addInfo("{$name} ({$_SESSION["UserID"]}) Signed Training Log ({$_POST['resourceID']})");
+                $SigDate = Date('m/d/Y');
+                header('Content-type: application/json');
+                echo json_encode(array("ResourceID" => $LogResult->ID
+                                        ,"Activity" => $_POST['logAction']
+                                        ,"dSignedOn"=>$SigDate
+                                        ,"IsSigned"=>1)
+                                );
+            } else {
+                http_response_code(500);
+                echo json_encode(array("msg" => $LogResult->Message));
+                exit();
+            }
+        }  
+        
+	} else {
+        header('Content-type: application/json');
+        echo json_encode($_POST);
+    }
+}
+
+
+?>

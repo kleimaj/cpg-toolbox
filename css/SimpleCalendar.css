@@ -1,0 +1,106 @@
+table.SimpleCalendar {
+	border-collapse: separate;
+	border-spacing: 3px;
+	table-layout: fixed;
+	/*margin-right:auto;
+	margin-left:auto;*/
+	width:95%;
+}
+
+table.SimpleCalendar th {
+	background: rgba(1,74,108,.85);
+	color: #ffffff;
+	font-size: 1em;
+	padding: 3px;
+	border: 1px solid #014a6c;
+	border-top: none;
+}
+
+table.SimpleCalendar tbody td {
+	vertical-align: top;
+	width:calc(100% / 7);
+	height: 90px;
+	border: 1px solid rgba(1,74,108,.7);
+	background: #ffffff;
+}
+
+table.SimpleCalendar tbody td time {
+	font-size: .7em;
+	display: block;
+	background: white;
+	padding: 2px;
+	text-align: right;
+	font-weight: bold;
+}
+
+table.SimpleCalendar tbody td.SCsuffix, table.SimpleCalendar tbody td.SCprefix {
+    background: white;
+	opacity: 0.3;
+}
+
+table.SimpleCalendar tbody td div.event {
+    color: #014a6c;
+    font-size: .9em;
+    padding: 5px;
+    line-height: 1em;
+    border-bottom: 1px solid #bbb;
+    color: #014a6c; 
+    vertical-align: middle;
+}
+
+table.SimpleCalendar tbody td div.event > div {
+    display: flex;
+    flex-direction: row;
+    justify-content: flex-start;
+    align-items: center;
+    cursor: pointer;
+}
+table.SimpleCalendar tbody td div.event:hover {
+    background-color: rgba(240,242,247,.7);
+}
+table.SimpleCalendar tbody td div.event > div > span {
+  max-width: 80%;
+  overflow-y: visible;
+  overflow-wrap: break-word;
+}
+
+
+table.SimpleCalendar tbody td div.event img {
+  display: inline-block;
+  width: auto;
+  height: 2em;
+  margin:0 1em 0 0;
+}
+table.SimpleCalendar tbody td.today {
+  background:rgba(21, 94, 128, 0.10);
+}
+
+.calender-header{
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	height: 30px;
+  margin-bottom: 20px;
+}
+.calender-header a {
+  color: #c472b4;
+  margin: 0 10px;
+}
+.calender-header > div {
+  text-align: center;
+  color: #014a6c;
+  font-family: "Open Sans", sans-serif;
+}
+.calender-header > span, .calender-header > div, .calender-header > ul {
+  flex: 1;
+}
+.calender-header > ul a > span {
+  color: #014a6c;
+}
+
+@media (max-width: 1100px){
+  table.SimpleCalendar tbody td div.event > div > span:not(.master) { overflow-x: hidden; overflow-wrap: unset;}
+}
+@media (max-width: 400px){
+  table.SimpleCalendar tbody td div.event > div > span.master { display: none; }
+}

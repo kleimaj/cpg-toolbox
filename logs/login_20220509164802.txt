@@ -1,0 +1,1 @@
+{"LogID":59,"auth_user":true,"logged_in":true,"user_verified":"20220509164802","LAST_ACTIVITY":1652129281,"UserFullName":"Jacob Kleiman","samaccountname":"JacobK","userid":879,"net":"JacobK","mail":"jacobk@communicationpartners.com"}

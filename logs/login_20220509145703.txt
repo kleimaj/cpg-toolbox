@@ -1,0 +1,1 @@
+{"LogID":57,"auth_user":true,"logged_in":true,"user_verified":"20220509145703","LAST_ACTIVITY":1652122622,"UserFullName":"Gouri Krishnamoorthy","samaccountname":"GouriK","userid":862,"net":"GouriK","mail":"GouriK@communicationpartners.com"}

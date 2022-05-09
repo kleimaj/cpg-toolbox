@@ -1,0 +1,202 @@
+// modals.scss
+
+.modal {
+	display: none;
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@include transform(translate(-50%,-50%));
+	background-color: $dk-blue;
+	border: 1px solid $md-blue;
+	@include border-radius($border-radius);
+	transition: right .5s;
+	padding-left: 1em;
+	text-align: left;
+	min-width: 60%;
+	z-index: 9900;
+
+	&.active {
+		display: inline-block;
+	}
+	
+	a.modal-close {
+		position: absolute;
+		top: 1em;
+		right: 1em;
+		
+		&:not(.disabled):hover {
+			filter: drop-shadow(0 0 5px rgba($lt-blue,1));
+		}
+		
+		img {
+			height: .7em;
+		}
+	}
+	
+	h1 {
+		color: $white;
+		padding: 1em 1em 1em 0;
+		border-bottom: 1px solid $lt-blue;
+		font-family: $century-gothic;
+		font-size: 1.25em;
+	}
+	
+	p {
+		line-height: 1.25em;
+		
+		a {
+			text-decoration: underline;
+		}
+	}
+	
+	form {
+		padding: 1rem;
+		font-size: 0;
+		
+		> * {
+			font-size: 1rem;
+			padding: 0 1em .5em 0;
+		}
+		
+		.full-width {
+			display: block;
+			width: 100%;
+		}
+
+		.half-width {
+			display: inline-block;
+			width: 50%;
+			vertical-align: top;
+		}
+
+		label,
+		input,
+		button,
+		p {
+			display: block;
+			font-family: $century-gothic;
+			font-size: 1rem;
+		}
+		
+		label {
+			margin: .5em 0 .25em 0;
+			
+			span {
+				font-size: .7em;
+				color: $white;
+			}
+		}
+		
+		input {
+			border: 0;
+			background-color: $md-blue;
+			padding: .5em 1em;
+			width: 100%;
+			color: $white;
+		}
+		
+		p {
+			color: $white;
+		}
+	}
+	
+	ul.buttons {
+		padding: 1rem 1rem 1rem 0;
+		display: block;
+		text-align: center;
+		
+		li {
+			font-size: 1rem;
+			display: inline-block;
+			vertical-align: top;
+			margin: 0 1em;
+			
+			button {
+				display: block;
+				@include radial-gradient(rgb(185,206,214),$lt-blue-2);
+				border: 1px solid $white;
+				color: $md-blue;
+				@include border-radius($border-radius);
+				padding: .5em 2em;
+				font-size: .7rem;
+				font-weight: 700;
+				
+				&:not(.disabled):hover {
+					filter: drop-shadow(0 0 5px rgba($lt-blue,1));
+				}
+			}
+		}
+	}
+}
+
+#logout-modal,
+#signature-modal,
+#message-modal {
+	position: absolute;
+	top: 50%;
+	left: 50%;
+	@include transform(translate(-50%,-50%));
+	@include radial-gradient(rgb(184,211,211),$lt-blue-2);
+	border: 1px solid $md-blue;
+	@include border-radius($border-radius);
+	padding: 1.5em;
+	display: none;
+	font-family: $century-gothic;
+	font-size: 1.25em;
+	z-index: 9999;
+	
+	&.active {
+		display: inline-block;
+	}
+	
+	h1 {
+		text-align: center;
+		color: $dk-blue;
+	}
+	
+	ul.buttons {
+		padding: 3rem 1rem 1rem 0;
+		display: block;
+		text-align: center;
+		
+		li {
+			font-size: 1rem;
+			display: inline-block;
+			vertical-align: top;
+			
+			a {
+				display: block;
+				@include radial-gradient($dk-blue,$md-blue);
+				border: 1px solid $lt-blue;
+				color: $white;;
+				@include border-radius($border-radius * 2);
+				padding: .5em 2em;
+				font-size: 1rem;
+				
+				&:not(.disabled):hover {
+					filter: drop-shadow(0 0 5px rgba($dk-blue,1));
+				}
+			}
+		}
+	}
+}
+
+
+#contact-modal {
+	padding-bottom: 1em;
+	
+	h2 {
+		color: $white;
+		padding: 1em 0 0 0;
+		font-family: $century-gothic;
+	}
+	
+	p {
+		
+		a {
+			font-weight: 600;	
+		}		
+		
+	}
+}
+

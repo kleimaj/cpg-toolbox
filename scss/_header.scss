@@ -1,0 +1,105 @@
+// header.scss
+
+header {
+	width: 100%;
+	padding: 2vh $margin;
+	position: relative;
+	
+	background: rgb(21,60,79);
+	background: -moz-radial-gradient(center, ellipse cover,  $md-blue 0%, $dk-blue 100%);
+	background: -webkit-radial-gradient(center, ellipse cover,  $md-blue 0%, $dk-blue 100%);
+	background: radial-gradient(ellipse at center,  $md-blue 0%, $dk-blue 100%);
+	
+	img.logo {
+		height: 8vh;
+	}
+	
+	ul.header-nav {
+		text-align: right;
+		display: inline-block;
+		position: absolute;
+		right: $margin;
+		top: 50%;
+		@include transform(translateY(-50%));
+		
+		> li {
+			display: inline-block;
+			vertical-align: middle;
+			margin-left: 2vw;
+			
+			> input {
+				border: 0;
+				padding: .5em 1em;
+				color: $md-blue;
+				font-family: $century-gothic;
+				background: rgba($lt-blue,.7) url("../images/search.svg") no-repeat 95% center;
+				background-size: auto 70%;
+				
+			}
+			
+			> a {
+				display: block;
+				text-align: center;
+				font-size: .7em;
+				position: relative;
+				
+				> img {
+					display: block;
+					height: 2em;
+					margin: 0 auto .25em auto;
+				}
+				
+				&:not(.disabled):hover,
+				&:not(.disabled).active {
+					filter: drop-shadow(0 0 5px rgba($lt-blue,1));
+					
+					#account-menu {
+						display: inline-block;
+					}
+				}
+			}
+		}
+		
+	}
+}
+
+nav {
+	display: block;
+	width: 100%;
+	color: $white;
+	padding: 1em $margin;
+	
+	ul {
+		display: inline-block;
+		text-align: center;
+		
+		li {
+			display: inline-block;
+			vertical-align: baseline;
+			padding: 0 1em;
+			
+			&:not(:last-of-type) {
+				border-right: 1px solid rgba($lt-blue,.5);
+			}
+			
+			a {
+				display: inline-block;
+				
+				&:hover,
+				&.active {
+					font-weight: bold;
+				}
+				
+				&:before {
+					display: block;
+					content: attr(title);
+					font-weight: bold;
+					height: 0;
+					overflow: hidden;
+					visibility: hidden;
+				}
+
+			}
+		}
+	}
+}

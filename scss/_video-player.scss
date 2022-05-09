@@ -1,0 +1,120 @@
+// video-player.scss
+
+#video-container {
+	display: none;
+	width: 60%;
+	position: fixed;
+	top: 50%;
+	left: 50%;
+	@include transform(translate(-50%,-50%));
+	z-index: 9999;
+	
+	&.active {
+		display: block;
+	}
+	
+	.video-close {
+		position: absolute;
+		bottom: 103%;
+		left: 103%;
+		
+		img {
+			height: 1.5rem;
+		}
+		
+		&:not(.disabled):hover {
+			filter: drop-shadow(0 0 5px rgba($lt-blue,1));
+		}
+
+	}
+}
+
+.video-js {
+	.vjs-control-bar {
+		top: 100%;
+		bottom: auto;
+		width: 90%;
+		margin: 0 5%;
+		height: 4em;
+		padding: .5em;
+		justify-content: space-between;
+		@include radial-gradient($md-blue, $lt-blue-2);
+		background-size: 300% 300%;
+		border: 1px solid $lt-blue;
+		@include border-radius($border-radius);
+		border-top-left-radius: 0;
+		border-top-right-radius: 0;	
+	}
+
+	//.vjs-progress-control,
+	.vjs-remaining-time,
+	.vjs-picture-in-picture-control,
+	.vjs-volume-control {
+		display: none;
+	}
+	
+	.vjs-slider-active,
+	.vjs-volume-horizontal {
+		width: 0;
+	}
+}
+
+.vjs-has-started.vjs-user-inactive.vjs-playing .vjs-control-bar {
+	opacity: 1;
+}
+
+.vjs-icon-pause:before,
+.video-js .vjs-play-control.vjs-playing .vjs-icon-placeholder:before {
+	content: '';
+	background: url("../images/pause.svg") no-repeat center;
+	background-size: auto 80%;
+}
+
+.vjs-icon-play:before,
+.video-js .vjs-play-control .vjs-icon-placeholder:before,
+.video-js .vjs-big-play-button .vjs-icon-placeholder:before {
+	content: '';
+	background: url("../images/play.svg") no-repeat center;
+	background-size: auto 80%;
+}
+
+.vjs-icon-volume-mute:before,
+.video-js .vjs-mute-control.vjs-vol-0 .vjs-icon-placeholder:before {
+	content: '';
+	background: url('../images/mute-on.svg') no-repeat center;
+	background-size: auto 80%;
+}
+.vjs-icon-volume-high:before,
+.video-js .vjs-mute-control .vjs-icon-placeholder:before {
+	content: '';
+	background: url('../images/mute-off.svg') no-repeat center;
+	background-size: auto 80%;
+}
+
+.vjs-icon-fullscreen-enter:before,
+.video-js .vjs-fullscreen-control .vjs-icon-placeholder:before {
+	content: '';
+	background: url('../images/fullscreen.svg') no-repeat center;
+	background-size: auto 80%;
+}
+
+.video-js .vjs-volume-panel.vjs-volume-panel-horizontal.vjs-hover, .video-js .vjs-volume-panel.vjs-volume-panel-horizontal:active, .video-js .vjs-volume-panel.vjs-volume-panel-horizontal.vjs-slider-active {
+	width: auto;
+	transition: none;
+}
+
+.video-js .vjs-big-play-button {
+	@include radial-gradient($md-blue,$lt-blue);
+	border: 1px solid $lt-blue-2;
+	background-size: 200% 200%;
+	background-position: center;
+}
+
+
+
+
+
+
+
+
+

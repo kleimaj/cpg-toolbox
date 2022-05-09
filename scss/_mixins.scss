@@ -1,0 +1,54 @@
+/* MIX-INS */
+
+@mixin border-radius($radius) {
+	-webkit-border-radius: $radius;
+	-moz-border-radius: $radius;
+	-ms-border-radius: $radius;
+	border-radius: $radius;
+}
+
+@mixin transform-style($style) {
+	-webkit-transform-style: $style;
+	-moz-transform-style: $style;
+	transform-style: $style;
+}
+
+@mixin transform($transform) {
+    -ms-transform: $transform;
+    -webkit-transform: $transform;
+    transform: $transform;
+}
+
+@mixin transition($transition) {
+	-webkit-transition: $transition;
+	-moz-transition: $transition;
+	-o-transition: $transition;
+	transition: $transition;
+}
+
+@mixin box-sizing($box) {
+    -webkit-box-sizing: $box;
+    -moz-box-sizing: $box;
+	box-sizing: $box;
+}
+
+@mixin user-select($sel) {
+	-webkit-user-select: $sel;
+	-moz-user-select: $sel;
+	-ms-user-select: $sel;
+	user-select: $sel;
+}
+
+@mixin appearance($a) {
+	-webkit-appearance: $a;
+	-moz-appearance: $a;
+	appearance: $a;
+}
+
+@mixin radial-gradient($c1,$c2) {
+	background: -moz-radial-gradient(center, ellipse cover,  $c1 10%, $c2 90%);
+	background: -webkit-radial-gradient(center, ellipse cover,  $c1 10%, $c2 90%);
+	background: radial-gradient(ellipse at center,  $c1 10%, $c2 90%);
+	background-size: 400% 400%;
+	background-position: center 35%;
+}

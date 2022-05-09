@@ -1,0 +1,92 @@
+<!doctype html>
+<html>
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1, minimum-scale=1" />
+<title>CPG Toolbox</title>
+	<!-- videoJS -->
+	<link href="https://vjs.zencdn.net/7.11.4/video-js.css" rel="stylesheet" />
+	<link rel="stylesheet" href="css/main.css">
+	<!-- jQuery 1.12 -->
+	<script src="https://code.jquery.com/jquery-1.12.4.min.js" integrity="sha256-ZosEbRLbNQzLpnKIkEdrPv7lOy9C27hHQ+Xp8a4MxAQ=" crossorigin="anonymous"></script>
+	<!-- TweenMax -->
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.6.1/gsap.min.js"></script>
+	<!--- Custom Scripts -->
+	<script type="text/javascript" src="js/custom-scripts.js"></script>
+	
+	<!-- OG Meta Tags -->
+	<meta property="og:type" content="website">
+	<meta property="og:title" content="">
+	<meta property="og:description" content="">
+	<meta property="og:image" content="">
+	<meta property="og:url" content="">
+
+	<!-- Twitter Meta Tags -->
+	<meta name="twitter:title" content="">
+	
+	<!-- favicon -->
+	<link rel="shortcut icon" type="image/x-icon" href="/favicon.ico">
+</head>
+
+<body>
+	
+	<header>
+		<a href="#"><img class="logo" src="images/cpg-toolbox-logo.svg"></a>
+		<!--<ul class="header-nav">
+			<li>
+				<form>
+					<input class="search" type="text">
+				</form>
+			</li>
+			<li><a class="help-btn" href="#"><img src="images/help.svg">HELP</a></li>
+			<li>
+				<a class="acct-btn" href="#"><img src="images/account.svg">ACCOUNT</a>
+			</li>
+		</div>-->
+	</header>
+	
+	<nav>
+		<ul>
+			<li><a class="home-nav" title="Home" href="main-menu.html">Home</a></li>
+			<li><a class="upcoming-nav" title="Upcoming Webcasts" href="upcoming.html">Upcoming Webcasts</a></li>
+			<li><a class="on-demand-nav active" title="On-Demand Webcast Toolbox" href="on-demand.html">On-Demand Webcast Toolbox</a></li>
+		</ul>
+	</nav>
+	
+	<div id="content-area">
+		<h1>On-Demand Webcast Toolbox</h1>
+		<h3>Lorem ipsum dolor sit amet.</h3>
+		
+		<ul class="filters">
+			<li><i class="fas fa-filter"></i> Filters</li>
+		</ul>
+		
+		<ul id="webcast-archive">
+			<li>
+				<div class="webcast">
+					<h1>[Presentation Title]</h1>
+					<a data-title="30:00" href="bob.mp4"><img src="assets/bob.png"></a>
+					<p>[Date of Presentation]</p>
+				</div>
+				<ul class="supporting-materials">
+					<li><a class="pdf">[Asset Title]<span>[Asset Description]</span></a></li>
+					<li><a class="pdf">[Asset Title]<span>[Asset Description]</span></a></li>
+					<li><a class="ppt">[Asset Title]<span>[Asset Description]</span></a></li>
+				</ul>
+			</li>
+		</ul>
+	</div>
+	
+	<div id="shader"></div>
+	
+	<div id="video-container">
+		<video id="speaker-video" class="video-js vjs-big-play-centered vjs-fluid" controls preload="auto" data-setup="{}" poster="assets/bob5.png">
+			<source src="assets/bob.mp4" type="video/mp4">
+		</video>
+		<a class="video-close" href="#"><img src="images/close.svg"></a>
+	</div>
+
+	<script src="https://vjs.zencdn.net/7.11.4/video.min.js"></script>		 
+	
+</body>
+</html>

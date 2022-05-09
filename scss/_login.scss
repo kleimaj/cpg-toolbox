@@ -1,0 +1,117 @@
+// login.scss
+
+.login {
+	background-color: #153c4f;
+	border: 1px solid #071c2d;
+	-webkit-border-radius: 9px;
+	-moz-border-radius: 9px;
+	-ms-border-radius: 9px;
+	border-radius: 9px;
+	box-shadow: 0 0 1rem #071c2d;
+	display: block;
+	margin: 15vh auto 0 auto;
+	width: 35%;
+	padding: 1em 2em;
+	h1 {
+		font-size: 1.15em;
+		text-align: center;
+		line-height: 2em;
+	}
+	h4 {
+		font-size: 0.70em;
+		border-bottom: 1px solid #b9ced6;
+		text-align: center;
+		line-height: 2em;
+	}
+	p {
+		text-align: center;
+		width: 100%;
+		margin-top: 1em;
+	}
+	form {
+		padding: 1em 0;
+		label {
+			display: block;
+			font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+			margin: .5em 0 .25em 0;
+		}
+		input {
+			display: block;
+			font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+		}
+		button {
+			display: block;
+			font-family: "Century Gothic", CenturyGothic, AppleGothic, sans-serif;
+			background: #153c4f;
+			background: -moz-radial-gradient(center, ellipse cover, #153c4f 10%, #b9ced6 90%) center;
+			background: -webkit-radial-gradient(center, ellipse cover, #153c4f 10%, #b9ced6 90%) center;
+			background: radial-gradient(ellipse at center, #153c4f 10%, #b9ced6 90%) center;
+			background-size: 400% 650%;
+			background-position: center 40%;
+			border: 1px solid #b9ced6;
+			color: white;
+			-webkit-border-radius: 9px;
+			-moz-border-radius: 9px;
+			-ms-border-radius: 9px;
+			border-radius: 9px;
+			padding: .5em 0;
+			width: 100%;
+			margin: 3em 0 0 0;
+			cursor: pointer;
+			&:hover {
+				filter: drop-shadow(0 0 5px #b9ced6);
+			}
+		}
+		a {
+			margin-top: 1em;
+			font-size: .7em;
+			font-style: italic;
+		}
+		a.forgot-pw {
+			text-align: right;
+			float: right;
+		}
+		.error-msg {
+			display: block;
+			font-size: .7em;
+			text-align: left;
+			color: white;
+			line-height: 1.25em;
+		}
+		.inputDiv {
+			position: relative;
+			border: 0;
+			background-color: #071c2d;
+			padding: 0.75em;
+			width: 100%;
+			color: #ffffff;
+			display: flex;
+			flex-direction: row;
+			.username {
+				border: none;
+				background-color: #071c2d;
+				width: 100%;
+				font-size: 0.8em;
+			}
+			.password {
+				border: none;
+				background-color: #071c2d;
+				width: 100%;
+				font-size: 0.8em;
+			}
+			.cursorClass {
+				&:hover {
+					cursor: pointer !important;
+				}
+			}
+			input {
+				&:-webkit-autofill {
+					transition: background-color 600000s 0s, color 600000s 0s;
+					&:focus {
+						transition: background-color 600000s 0s, color 600000s 0s;
+					}
+				}
+			}
+		}
+	}
+}
