@@ -1,0 +1,38 @@
+
+table.SimpleCalendar {
+    border-spacing: 12px !important;
+    margin: 0 auto;
+    padding: 10px 20px;
+    background-color: #07131A;
+}
+table.SimpleCalendar tbody td, table.SimpleCalendar tbody td time {
+    // background-color: rgba(185, 206, 214, .3) !important;
+    background: rgba(185, 206, 214, .4) !important;
+    color: rgba(7, 19, 26, 1);
+    border: none !important;
+    // opacity: .3 !important;
+}
+table.SimpleCalendar tbody td time {
+    background: rgba(185, 206, 214, 0) !important;
+    margin-right: 10px;
+}
+table.SimpleCalendar tbody td.SCsuffix, table.SimpleCalendar tbody td.SCprefix {
+    background-color: #B9CED6 !important;
+    opacity: .2 !important;
+}
+table.SimpleCalendar th {
+    background-color: rgb(185, 206, 214) !important;
+    color: #07131A !important;
+    border: none !important;
+}
+.calender-header a {
+color: #B9CED6 !important; 
+}
+.calender-header > div {
+    color: #fff !important;
+    position: relative;
+    top: -32px;
+    @media only screen and (min-width: 1400px) {
+        top: -38px;
+    }
+}
